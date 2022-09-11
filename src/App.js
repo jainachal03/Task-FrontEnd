@@ -1,25 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  // require('dotenv').config()
+  const client_id = process.env.REACT_APP_GITHUB_CLIENT_ID;
+  return(
+    <div className = 'App'>
+      <a href = {`https://github.com/login/oauth/authorize?client_id=${client_id}&redirect_uri=http://localhost:4000/auth&scope=user%20repo`}
+      >LOGIN WITH GITHUB</a>
     </div>
-  );
+  ) 
 }
 
 export default App;
